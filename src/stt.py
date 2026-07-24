@@ -18,7 +18,7 @@ class SpeechToText:
             compute_type=self.compute_type,
         )
 
-    def transcribe(self, audio_path: str, language: str = None) -> str:
+    def transcribe(self, audio_path: str, language: str = "en") -> str:
         """
         Transcribe an audio file (wav/mp3/m4a/etc.) to text.
 
