@@ -55,6 +55,9 @@ audio_bytes = audio_recorder(
 )
 
 if audio_bytes:
+    if len(audio_bytes) < 5000:
+        st.warning("That recording was too short — please click record and speak for at least 1-2 seconds.")
+        st.stop()
     st.audio(audio_bytes, format="audio/wav")
 
     with st.spinner("Transcribing..."):
